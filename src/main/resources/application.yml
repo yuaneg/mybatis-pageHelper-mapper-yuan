@@ -1,0 +1,27 @@
+spring:
+  datasource:
+    username: root
+    url: jdbc:mysql://localhost:3306/p2p_customer?useUnicode=true&characterEncoding=utf-8&useSSL=true
+    password: 123456
+    driver-class-name: com.mysql.jdbc.Driver
+  redis:
+    host: 127.0.0.1
+    database: 0
+    port: 6379
+    timeout: 0
+    password: 123456
+
+mybatis:
+    type-aliases-package: xyz.talentboy
+    mapper-locations: classpath:mapper/*.xml
+mapper:
+    mappers:
+        - MyMapper
+    not-empty: false
+    identity: MYSQL
+
+pagehelper:
+    helperDialect: mysql
+    reasonable: true
+    supportMethodsArguments: true
+    params: count=countSql
